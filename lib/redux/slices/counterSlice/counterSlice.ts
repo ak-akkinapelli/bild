@@ -1,5 +1,11 @@
 /* Core */
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+
+/* Types */
+export interface CounterSliceState {
+  value: number;
+  status: "idle" | "loading" | "failed";
+}
 
 const initialState: CounterSliceState = {
   value: 0,
@@ -10,12 +16,18 @@ export const counterSlice = createSlice({
   name: "counter",
   initialState,
   reducers: {
-    // increment, decreament, incrementByAmount loginc here
+    increment:(state)=>{
+      state.value +=1
+    },
+    decrement:(state)=>{
+      state.value -= 1
+    },
+    //increments value by given payload value
+    incrementByAmount:(state,action: PayloadAction<number>)=>{
+      state.value += action.payload
+    }
   },
 });
 
-/* Types */
-export interface CounterSliceState {
-  value: number;
-  status: "idle" | "loading" | "failed";
-}
+export const {increment, decrement, incrementByAmount} = counterSlice.actions
+export default counterSlice.reducer;

@@ -1,16 +1,22 @@
 "use client";
 
 /* Core */
-import { useState } from "react";
+import { useState, ChangeEvent } from "react";
 
 /* Instruments */
-import { useSelector, selectCount } from "@/lib/redux";
+import { useSelector, selectCount, useDispatch, increment, decrement, incrementIfOdd, incrementByAmount } from "@/lib/redux";
 import styles from "./counter.module.css";
 
 export const Counter = () => {
   const count = useSelector(selectCount);
+  const dispatch = useDispatch()
+  
+  //default state of 1 for input field
+  const [incrementAmountBy, setIncrementAmountBy]= useState<number>(1)
 
-  // Create a state named incrementAmount
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setIncrementAmountBy(parseInt(e.target.value, 10));
+  };
 
   return (
     <div>
@@ -18,9 +24,7 @@ export const Counter = () => {
         <button
           className={styles.button}
           aria-label="Decrement value"
-          onClick={() => {
-            // dispatch event to decrease count by 1
-          }}
+          onClick={() => dispatch(decrement())}
         >
           -
         </button>
@@ -28,28 +32,23 @@ export const Counter = () => {
         <button
           className={styles.button}
           aria-label="Increment value"
-          onClick={() => {
-            // dispatch event to increment count by 1
-          }}
+          onClick={() => dispatch(increment())}
         >
           +
         </button>
       </div>
       <div className={styles.row}>
-        <input className={styles.textbox} aria-label="Set increment amount" />
+        {/* Chose input type as number  */}
+        <input className={styles.textbox} aria-label="Set increment amount" type='number' value={incrementAmountBy} onChange={handleInputChange}/>
         <button
           className={styles.button}
-          onClick={() => {
-            // dispatch event to add incrementAmount to count
-          }}
+          onClick={() => dispatch((incrementByAmount(incrementAmountBy)))}
         >
           Add Amount
         </button>
         <button
           className={styles.button}
-          onClick={() => {
-            // dispatch event to add incrementAmount only if count is odd
-          }}
+          onClick={() => dispatch(incrementIfOdd(incrementAmountBy))}
         >
           Add If Odd
         </button>
