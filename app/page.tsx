@@ -6,5 +6,5 @@ export default function IndexPage() {
 }
 
 export const metadata = {
-  title: "React Redux Task",
+  title: "Boo: A simple counter",
 };

@@ -10,7 +10,7 @@ import styles from "./counter.module.css";
 export const Counter = () => {
   const count = useSelector(selectCount);
   const dispatch = useDispatch()
-  
+
   //default state of 1 for input field
   const [incrementAmountBy, setIncrementAmountBy]= useState<number>(1)
 
@@ -41,13 +41,13 @@ export const Counter = () => {
         {/* Chose input type as number  */}
         <input className={styles.textbox} aria-label="Set increment amount" type='number' value={incrementAmountBy} onChange={handleInputChange}/>
         <button
-          className={styles.button}
+          className={styles.button_text}
           onClick={() => dispatch((incrementByAmount(incrementAmountBy)))}
         >
           Add Amount
         </button>
         <button
-          className={styles.button}
+          className={styles.button_text}
           onClick={() => dispatch(incrementIfOdd(incrementAmountBy))}
         >
           Add If Odd

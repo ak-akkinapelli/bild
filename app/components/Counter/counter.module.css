@@ -1,7 +1,7 @@
 .row {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .row > button {
@@ -14,27 +14,34 @@
 }
 
 .value {
-  font-size: 78px;
+  font-size: 148px;
   padding-left: 16px;
   padding-right: 16px;
   margin-top: 2px;
+  font-weight: 600;
   font-family: 'Courier New', Courier, monospace;
 }
 
-.button {
+.button, .button_text {
   appearance: none;
   background: none;
-  font-size: 32px;
   padding-left: 12px;
   padding-right: 12px;
   outline: none;
   border: 2px solid transparent;
-  color: rgb(112, 76, 182);
+  color: #CED2E6;
   padding-bottom: 4px;
   cursor: pointer;
-  background-color: rgba(112, 76, 182, 0.1);
+  background-color: #141516;
   border-radius: 2px;
   transition: all 0.15s;
+}
+.button{
+  font-size: 42px;
+}
+
+.button_text { 
+  font-size: 28px;
 }
 
 .textbox {
@@ -46,15 +53,18 @@
 }
 
 .button:hover,
-.button:focus {
-  border: 2px solid rgba(112, 76, 182, 0.4);
+.button:focus, 
+.button_text:hover,
+.button_text:focus {
+  border: 2px solid #CED2E6;
+  border-radius: 8px;
 }
 
-.button:active {
+.button:active, .button_text:active {
   background-color: rgba(112, 76, 182, 0.2);
 }
 
-.asyncButton {
+/* .asyncButton {
   composes: button;
   position: relative;
 }
@@ -76,4 +86,4 @@
   width: 0%;
   opacity: 1;
   transition: 0s;
-}
+} */
