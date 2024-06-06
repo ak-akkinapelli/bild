@@ -1,84 +1,19 @@
-# React.js Counter Task
+Boo: A Simple counter - React.js Counter -  Task for Bild.
 
-Welcome to the React.js Counter Task! This task involves implementing a counter functionality in a React.js project. You will need to clone the project, update specific files, and push your code back to your own repository.
+Boo's Features:
+1. User can increment and decrement counter by 1 by using + and - buttons.
+2. User can input a value in the input field (of type number) and click "Add amount" to directly add that to the existing counter value.
+3. Only when the current value is an odd number, the "Add if odd" button click adds the entered input value to the current counter value.
 
-## Task Overview
+How to use:
+1. Clone the repo.
+2. Install dependencies via "yarn install" or "npm install"
+3. run yarn run dev to meet Boo.
+4. Don't worry! Boo is type safe.
 
-Your task is to implement the following functionality in the existing React.js project:
-
-1. **Increment/Decrement Button Logic**: Implement logic to increase or decrease the count by 1 on button click.
-2. **Custom Amount Addition**: Add an input box where users can enter any amount. Implement functionality so that when the "Add Amount" button is clicked, the count gets increased by the entered amount.
-3. **Conditional Increase**: Implement a feature to only increase the count by the amount entered in the input box when the current count value is odd.
-
-## Getting Started
-
-1. **Clone the Repository**: First, you need to clone the repository to your local machine.
-
-   ```bash
-   git clone [repository-url]
-   ```
-
-2. **Navigate to the Project Directory**:
-
-   ```bash
-   cd [project-directory]
-   ```
-
-3. **Install Dependencies**:
-
-   ```bash
-   npm install
-   ```
-
-   or if you're using `yarn`:
-
-   ```bash
-   yarn install
-   ```
-
-## Files to Update
-
-You will need to make changes in the following files. Look for comments in each file for specific instructions:
-
-- `counterSlice.ts`: Update the Redux slice to handle the new actions.
-- `thunks.ts`: Implement count conditional update[if odd] logic here.
-- `Counter.tsx`: Update the React component to implement the new UI and logic.
-
-## Requirements
-
-- Correctly implement all the functionalities as described above.
-- Ensure that you add proper types to your code (TypeScript).
-- Write clean and readable code with proper comments.
-- Make sure the application compiles and runs without errors.
-
-## Submission
-
-Once you have implemented the required functionality:
-
-1. Commit your changes with a meaningful commit message.
-
-   ```bash
-   git commit -m "Implement counter functionality"
-   ```
-
-2. Push your changes to your own repository.
-
-   ```bash
-   git push origin [your-branch-name]
-   ```
-
-3. Submit the repo url to arun@gitforcetalent.com and cc pankaj@gitforcetalent.com and prithvi@gitforcetalent.com
-
-## Evaluation Criteria
-
-- Correct implementation of the functionalities.
-- Code quality and adherence to standard coding practices.
-- Use of TypeScript for type safety.
-- Creativity and problem-solving skills.
-
-## Extra Points
-
-- Extra points will be awarded for adding additional useful features or UI enhancements beyond the basic requirements.
-- Clean code and proper usage of Git (e.g., meaningful commit messages) will also be considered for extra points.
-
-Good luck with your task!
+Notes:
+1. I downgraded next version from latest to 13.3 as it's the highest version supported by Node 16.8.
+2. Node 16.8 is the highest version the borrowed laptop of my friend (MacOS high seirra 10.13) supports. I apologise for this unasked downgrade.
+3. I took liberty in adding some CSS, to name the counter as Boo. I loved the logo and the favicon, It's too cute to ignore.
+4. I added some functionality to Verify page.
+5. When you run Boo on localhost, go to verify page when counter is an odd number and when it's even.
